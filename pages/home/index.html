@@ -1,17 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" >
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/globalStyles.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/buttons.css" />
+    <link rel="stylesheet" href="./styles/filter.css" />
+    <link rel="stylesheet" href="./styles/products.css" />
     <title>Open Music</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <div class="container">
+        <section id="header" class="header">
+          <h1>open music</h1>
+          <button id="dmButton" class="dmButton"><img src="/assets/img/moon.svg" alt="moon" id="dmIcon"></button>
+        </section>
+        <section id="filters" class="filters">
+          <p>Gênero Musical</p>
+          <ol class="buttonsFilter">
+            <li class="filter" id="0">Todos</li>
+            <li class="filter" id="1">Pop</li>
+            <li class="filter" id="2">MBP</li>
+            <li class="filter" id="3">Forró</li>
+            <li class="filter" id="4">Samba</li>
+            <li class="filter" id="5">Baião</li>
+            <li class="filter" id="6">Rap</li>
+            <li class="filter" id="7">Hip-Hop</li>
+            <li class="filter" id="8">Rock</li>
+            <li class="filter" id="9">Reggae</li>
+            <li class="filter" id="10">Country</li>
+            <li class="filter" id="11">Gospel</li>
+          </ol>
+          <div class="rangeFilter">
+            <span>
+              <p>Definir preço</p>
+              <span><p>Até R$</p><input type="number" id="rangevalue" value="100" oninput="range.value=value" readonly></span>
+            </span>
+            <input type="range" value="100" min="0" max="100" id="range" oninput="rangevalue.value=value"/>
+          </div>
+        </section>
+        <section id="products" class="products">
+          <p>Albums Encontrados</p>
+          <ol class="cardFeed">
+          </ol>
+        </section>
+      </div>
+    </main>
     <script src="../../scripts/theme.js"></script>
-    <script src="./productsData.js"></script>
-    <script src="./index.js"></script>
+    <script src="../../scripts/productsData.js"></script>
+    <script src="../../scripts/sliceRange.js"></script>
+    <script src="../../scripts/renderCards.js"></script>
+    <script src="../../scripts/filters.js"></script>
   </body>
 </html>
